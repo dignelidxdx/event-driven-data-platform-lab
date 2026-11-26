@@ -147,3 +147,9 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Local Codex metadata and workspace state
+.codex/
+
+# Locally generated skill registry
+.atl/
