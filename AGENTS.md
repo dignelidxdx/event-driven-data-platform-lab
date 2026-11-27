@@ -42,8 +42,9 @@ Do not move directly from a vague idea to implementation. An approved specificat
 
 ```text
 docs/
+  examples/                    Worked examples, including end-to-end walkthroughs
+  specifications/               Project specifications grouped by business domain
   system-design/               Learning guide, processes, concepts, technology, artifacts, and case studies
-  superpowers/specs/           Approved designs and specifications
 ```
 
 The paths above describe the documentation currently present in the repository. Add code, tests, ADRs, or task-planning directories when the corresponding project work introduces them; do not treat absent directories as existing structure.
@@ -71,6 +72,7 @@ Before considering a feature complete:
 ## System design documentation conventions
 
 - Keep documentation in English and use the existing names and structure under `docs/system-design/`.
+- Keep worked walkthroughs under `docs/examples/` and distinguish implemented behavior from proposed extensions or deployment designs.
 - Explain when and why a pattern or artifact is useful, its trade-offs, and how it connects to a Delivery Framework or System Design Process stage.
 - Use measurable examples only when their assumptions and source are clear. Mark unknown targets as questions or assumptions rather than inventing commitments.
 - Place reusable forms in `docs/system-design/artifacts-and-templates/`; place worked, explicitly illustrative scenarios in `docs/system-design/case-studies/`.
