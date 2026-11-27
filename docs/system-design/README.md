@@ -68,6 +68,7 @@ Concept references explain the methods and technical ideas used in these stages.
 - [Architecture Decision Record](artifacts-and-templates/architecture-decision-record.md)
 - [Request for Comments](artifacts-and-templates/request-for-comments.md)
 - [C4 diagrams](artifacts-and-templates/c4-diagrams.md)
+- [Diagram source formats](artifacts-and-templates/diagram-source-formats.md)
 - [API and event contract](artifacts-and-templates/api-and-event-contract.md)
 - [Capacity estimate](artifacts-and-templates/capacity-estimate.md)
 - [Threat model](artifacts-and-templates/threat-model.md)

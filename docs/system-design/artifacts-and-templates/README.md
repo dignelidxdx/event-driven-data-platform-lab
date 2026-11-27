@@ -8,6 +8,7 @@ Use these artifacts to make design reasoning reviewable and useful to its audien
 - [Architecture Decision Record](architecture-decision-record.md)
 - [Request for Comments](request-for-comments.md)
 - [C4 diagrams](c4-diagrams.md)
+- [Diagram source formats](diagram-source-formats.md)
 - [API and event contract](api-and-event-contract.md)
 - [Capacity estimate](capacity-estimate.md)
 - [Threat model](threat-model.md)
