@@ -4,3 +4,4 @@ A hands-on TypeScript lab for learning event-driven architecture, distributed sy
 ## Documentation
 
 - [System design learning guide](docs/system-design/README.md)
+- [Changelog](CHANGELOG.md)

@@ -48,6 +48,17 @@ Concept references explain the methods and technical ideas used in these stages.
 - [Frontend frameworks](technology/frontend-frameworks.md)
 - [Language onboarding guides](technology/onboarding/README.md)
 
+## Engineering workflow
+
+- [Engineering workflow guide](engineering-workflow/README.md)
+- [Team ownership and CODEOWNERS](engineering-workflow/team-ownership.md)
+- [Monorepo vs. multirepo](engineering-workflow/repository-strategy.md)
+- [Trunk Based Development, Gitflow, and other Git workflows](engineering-workflow/git-workflows.md)
+- [GitHub and GitLab](engineering-workflow/github-and-gitlab.md)
+- [Pull request description template](engineering-workflow/pull-request-template.md)
+- [GitHub pull request template](../../.github/pull_request_template.md)
+- [Pull request review checklist, including AI-assisted changes](engineering-workflow/pull-request-review-checklist.md)
+
 ## Artifacts and templates
 
 - [Artifacts and templates index](artifacts-and-templates/README.md)

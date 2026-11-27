@@ -9,6 +9,9 @@ This repository is an educational software architecture lab focused on an e-comm
 - Write project documentation in English, except for domain terms explicitly chosen otherwise.
 - Prefer minimal, explicit, traceable changes linked to a specification.
 - Treat `docs/system-design/` as the learning guide for the Delivery Framework, System Design Process, architecture concepts, technology selection, artifacts, and case studies.
+- Use `docs/system-design/engineering-workflow/` for team workflow and pull request guidance, including the author template and reviewer checklist.
+- Use `.github/pull_request_template.md` as GitHub's active pull request template and keep it aligned with its documentation under `docs/system-design/engineering-workflow/`.
+- Maintain `CHANGELOG.md` for notable user-visible, architectural, or operational changes; keep entries concise and do not duplicate the full commit history.
 - Keep the Delivery Framework's stages recognizable and ordered: requirements, core entities, API/protocols/endpoints, data flow, high-level design, and deep dives. Link methods and artifacts from the relevant stage instead of turning every method into a required step.
 - Keep the System Design Process complementary: it frames the stakeholder problem, workload and quality goals, options, validation, and presentation of the design.
 - Distinguish specifications and methods from tools. For example, OpenAPI is an API description specification and Swagger is a tooling ecosystem; C4 is a diagramming model; ADR records a decision; RFC solicits review; `EXPLAIN` inspects database query plans.
