@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 740" role="img" aria-labelledby="title description">
+  <title id="title">From architecture decisions to continuous verification</title>
+  <desc id="description">Requirements and architectural qualities inform an ADR. The decision defines a property to preserve and a suitable fitness function. Automated tests and rules run in CI, while operational measurements run in monitoring. Passing checks provide evidence; failures prompt review of the change or decision.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff9f8"/>
+      <stop offset="1" stop-color="#f6e6e9"/>
+    </linearGradient>
+    <linearGradient id="rose" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c76c84"/>
+      <stop offset="1" stop-color="#a84262"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#87364f"/>
+    </marker>
+    <style>
+      text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; fill: #492b36; }
+      .title { font-size: 29px; font-weight: 700; letter-spacing: .1px; }
+      .subtitle { font-size: 15px; fill: #795562; }
+      .card-title { font-size: 18px; font-weight: 700; }
+      .body { font-size: 14px; }
+      .small { font-size: 12px; }
+      .muted { fill: #795562; }
+      .line { fill: none; stroke: #87364f; stroke-width: 2.5; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1200" height="740" rx="28" fill="url(#background)"/>
+  <path d="M0 0h1200v12H0z" fill="url(#rose)"/>
+
+  <text x="600" y="61" text-anchor="middle" class="title">From architecture decisions to continuous verification</text>
+  <text x="600" y="91" text-anchor="middle" class="subtitle">Keep the qualities and boundaries that matter visible as the system changes.</text>
+
+  <!-- Inputs -->
+  <g>
+    <rect x="48" y="151" width="238" height="222" rx="20" fill="#fff" stroke="#d9a6b3" stroke-width="1.5"/>
+    <rect x="48" y="151" width="238" height="51" rx="20" fill="#f3dce2"/>
+    <path d="M48 182v20h238v-20" fill="#f3dce2"/>
+    <text x="70" y="184" class="card-title">What matters?</text>
+    <text x="70" y="235" class="body" font-weight="700">Requirements</text>
+    <text x="70" y="258" class="small">What the system must do</text>
+    <path d="M70 276h194" stroke="#ead5db"/>
+    <text x="70" y="306" class="body" font-weight="700">Architectural qualities</text>
+    <text x="70" y="329" class="small">Auditability · performance · security</text>
+    <text x="70" y="350" class="small">Data · compliance · scalability</text>
+  </g>
+
+  <!-- Decision -->
+  <path d="M296 261h35" class="line"/>
+  <g>
+    <rect x="344" y="151" width="230" height="222" rx="20" fill="#fff" stroke="#d9a6b3" stroke-width="1.5"/>
+    <rect x="344" y="151" width="230" height="51" rx="20" fill="#f3dce2"/>
+    <path d="M344 182v20h230v-20" fill="#f3dce2"/>
+    <text x="366" y="184" class="card-title">Decision · ADR</text>
+    <text x="366" y="239" class="body">Choose an approach</text>
+    <text x="366" y="265" class="small">Record why, alternatives,</text>
+    <text x="366" y="286" class="small">trade-offs, and consequences.</text>
+    <rect x="366" y="315" width="182" height="34" rx="17" fill="#f8edf0"/>
+    <text x="457" y="337" text-anchor="middle" class="small" font-weight="700">Design can evolve</text>
+  </g>
+
+  <!-- Property and fitness function -->
+  <path d="M584 261h35" class="line"/>
+  <g>
+    <rect x="632" y="151" width="245" height="222" rx="20" fill="#fff" stroke="#c98296" stroke-width="1.5"/>
+    <rect x="632" y="151" width="245" height="51" rx="20" fill="url(#rose)"/>
+    <path d="M632 182v20h245v-20" fill="url(#rose)"/>
+    <text x="654" y="184" class="card-title" fill="#fff" style="fill:#fff">What must stay true?</text>
+    <text x="654" y="231" class="small muted">State a checkable property</text>
+    <rect x="652" y="245" width="205" height="51" rx="12" fill="#f8edf0"/>
+    <text x="754" y="267" text-anchor="middle" class="small" font-weight="700">Example</text>
+    <text x="754" y="285" text-anchor="middle" class="small">Domain does not import adapters</text>
+    <text x="654" y="327" class="small" font-weight="700">Fitness function</text>
+    <text x="654" y="349" class="small muted">A repeatable check of that property</text>
+  </g>
+
+  <!-- Execution -->
+  <path d="M887 261h35" class="line"/>
+  <g>
+    <rect x="935" y="151" width="217" height="222" rx="20" fill="#fff" stroke="#d9a6b3" stroke-width="1.5"/>
+    <rect x="935" y="151" width="217" height="51" rx="20" fill="#f3dce2"/>
+    <path d="M935 182v20h217v-20" fill="#f3dce2"/>
+    <text x="957" y="184" class="card-title">Choose the check</text>
+    <text x="957" y="232" class="body" font-weight="700">Automated in CI</text>
+    <text x="957" y="255" class="small">Lint · unit/functional test</text>
+    <text x="957" y="276" class="small">integration · contract test</text>
+    <path d="M957 291h173" stroke="#ead5db"/>
+    <text x="957" y="319" class="body" font-weight="700">Observed in operation</text>
+    <text x="957" y="342" class="small">Metrics · health monitors</text>
+  </g>
+
+  <!-- Outcomes -->
+  <path d="M1043 373v35M382 408h661" fill="none" stroke="#87364f" stroke-width="2.5"/>
+  <path d="M382 408v45M818 408v45" fill="none" stroke="#87364f" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="178" y="466" width="408" height="108" rx="20" fill="#fff" stroke="#9d6273" stroke-width="1.5"/>
+    <circle cx="215" cy="505" r="16" fill="#d9eee5"/>
+    <path d="m207 505 6 6 11-13" fill="none" stroke="#3f8064" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="245" y="503" class="card-title">Passes</text>
+    <text x="245" y="530" class="body">Evidence supports the change.</text>
+    <text x="245" y="552" class="small muted">Keep evolving with the property checked.</text>
+  </g>
+  <g>
+    <rect x="614" y="466" width="408" height="108" rx="20" fill="#fff" stroke="#9d6273" stroke-width="1.5"/>
+    <circle cx="651" cy="505" r="16" fill="#f7e3d9"/>
+    <path d="M651 496v12m0 7v1" stroke="#a84262" stroke-width="3" stroke-linecap="round"/>
+    <text x="681" y="503" class="card-title">Fails</text>
+    <text x="681" y="530" class="body">Review the change and the check.</text>
+    <text x="681" y="552" class="small muted">Fix the implementation or revisit the ADR.</text>
+  </g>
+
+  <rect x="220" y="628" width="760" height="54" rx="27" fill="#6f2c43"/>
+  <text x="600" y="661" text-anchor="middle" font-size="14" font-weight="600" fill="#fff" style="fill:#fff">A passing check is useful evidence; it does not prove the whole architecture is correct.</text>
+</svg>

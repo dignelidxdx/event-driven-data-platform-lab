@@ -10,6 +10,8 @@ The System Design Process guides the broader design activity: framing the proble
 
 Concept references explain the methods and technical ideas used in these stages. Technology references support language and framework choices. Artifacts and templates provide optional ways to record and communicate the work. Case studies apply the guides to example systems.
 
+Architecture also evolves as teams learn during implementation and operation. The [evolutionary architecture and engineering practices](concepts/evolutionary-architecture.md) reference explains how repeatable checks, including architectural fitness functions, can help preserve important qualities and boundaries as the system changes.
+
 The repository's separate business and learning models are documented under [`docs/models/`](../models/README.md), each with functional and technical specifications.
 
 For a worked project journey from specification through implementation and an illustrative cloud deployment path, see the [end-to-end event-driven data platform example](../examples/end-to-end/README.md).

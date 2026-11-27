@@ -10,3 +10,4 @@ Reference notes for ideas used by the [Delivery Framework](../delivery-framework
 - [Design principles and anti-patterns](design-principles-and-anti-patterns.md)
 - [Data and storage](data-and-storage.md)
 - [Reliability and metrics](reliability-and-metrics.md)
+- [Evolutionary architecture and engineering practices](evolutionary-architecture.md) — iterative change, process versus engineering practices, and architectural fitness functions.

@@ -2,6 +2,8 @@
 
 This section describes how teams organize repositories, collaborate on changes, and review code. It complements the [Delivery Framework](../delivery-framework/README.md): the framework shapes the solution, while these practices help a team build and review it safely.
 
+Team workflow and engineering practices are related but distinct. Practices such as automated tests and continuous integration can support an architecture across different team processes. See [evolutionary architecture and engineering practices](../concepts/evolutionary-architecture.md) for guidance on checking important architectural qualities and boundaries as the system changes.
+
 ## Pull request workflow
 
 1. GitHub automatically uses [`.github/pull_request_template.md`](../../../.github/pull_request_template.md) for new pull requests.

@@ -6,6 +6,10 @@ Notable project changes are recorded here in reverse chronological order. Entrie
 
 ### Added
 
+- Guide to evolutionary architecture, engineering practices, and architectural fitness functions, with examples relevant to the lab.
+- Original editable SVG diagram connecting architecture decisions, fitness functions, and continuous verification.
+- Guidance distinguishing design principles from system-specific decisions and handling justified exceptions.
+- Optional architectural fitness function verification section in the ADR template.
 - GitHub pull request template at `.github/pull_request_template.md`.
 - Engineering workflow documentation covering team ownership, repository strategy, Git workflows, GitHub/GitLab, and pull request review, including AI-assisted changes.
 
