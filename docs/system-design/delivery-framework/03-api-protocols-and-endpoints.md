@@ -4,6 +4,8 @@ Define how actors and components interact across boundaries. Specify operations,
 
 Choose a communication style based on interaction needs: synchronous request/response, asynchronous messaging, or a combination. Name protocols and endpoint shapes only after clarifying consumers, latency expectations, delivery semantics, and operational constraints. Do not assume that every internal boundary needs a network API.
 
+For a conceptual comparison of REST, gRPC, GraphQL, WebSockets, Server-Sent Events, webhooks, and WebRTC—including when to consider each and their trade-offs—see [Communication Protocols and API Styles](../concepts/communication-protocols.md). This stage applies those options to the system's specific consumers, contracts, and requirements.
+
 ## Common interaction styles
 
 The list below is ordered by broad reported adoption where a comparable survey exists, not by technical suitability. Protocols overlap and survey samples differ. Postman's 2025 State of the API survey reports REST at 93%, webhooks 50%, WebSockets 35%, GraphQL 33%, and gRPC 14% among its respondents; these are survey figures, not universal market shares. WebRTC is not directly comparable because it is a real-time peer/media communication technology rather than a general-purpose business API style.

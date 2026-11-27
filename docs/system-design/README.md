@@ -40,6 +40,7 @@ For a worked project journey from specification through implementation and an il
 - [Architecture patterns](concepts/architecture-patterns.md)
 - [Application patterns](concepts/application-patterns.md)
 - [Design patterns](concepts/design-patterns.md)
+- [Communication protocols and API styles](concepts/communication-protocols.md)
 - [Distributed systems](concepts/distributed-systems.md)
 - [Design principles and anti-patterns](concepts/design-principles-and-anti-patterns.md)
 - [Data and storage](concepts/data-and-storage.md)

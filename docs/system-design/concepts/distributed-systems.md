@@ -22,11 +22,29 @@ Stores state changes as an append-only event history and derives current state b
 
 ## Saga
 
-Coordinates a business transaction spanning multiple local transactions using steps and compensating actions. A saga handles distributed workflows without a single global transaction, but compensation is business behavior and may not perfectly undo an action. Choose choreography or orchestration according to workflow visibility and coordination needs.
+### The problem it solves
 
-**Consider a Saga when** one business workflow spans independently committed services or resources and a single ACID transaction is unavailable or undesirable. Identify each step, timeout, retry, compensation, terminal failure, and manual-recovery path. Compensation must be valid business behavior (a refund is not the same as erasing a charge); for a single database transaction, use a local transaction instead.
+Suppose checkout changes order, inventory, and payment data owned by three separate services. A normal database transaction can atomically commit or roll back changes in one database, but it usually cannot wrap all three independently owned databases in one practical ACID transaction. If the order is created and inventory is reserved, then the payment provider times out, the system is left with completed work and an uncertain next step. Simply returning an error does not undo the order or release the stock.
 
-**Example:** checkout may reserve inventory, authorize payment, and arrange shipment. If shipment cannot be arranged after payment authorization, the workflow may release the inventory reservation and void or refund the authorization, according to the payment provider's rules. Record each step and outcome so retries and manual recovery can continue safely.
+A **Saga** makes this multi-service workflow explicit. It runs a sequence of local transactions, each committed by the service that owns that data. If a later step cannot complete, the workflow runs business actions that compensate for earlier completed steps. This provides a controlled path to finish, compensate, or escalate the workflow without pretending all services shared one atomic transaction.
+
+### Checkout example
+
+1. Create the order in `Pending` state.
+2. Reserve inventory. The inventory service commits its own reservation.
+3. Authorize payment. The payment provider commits its own authorization.
+4. Confirm the order and request shipment.
+5. If shipment cannot be arranged, mark the order as unable to proceed, release the inventory reservation, and void the payment authorization (or refund it if it was already captured).
+
+The final actions are **compensations**, not database rollbacks: a released reservation and a payment refund are new business events, and the original actions may remain visible in audit records. If a compensation also fails, retry it safely and expose the workflow for reconciliation or manual intervention. Keep explicit state so a timeout can be distinguished from a confirmed failure; a timeout may mean the remote action succeeded but its reply was lost.
+
+### When to consider it
+
+Consider a Saga when one business outcome requires changes across independently committed services or resources, a single local transaction cannot cover them, and the product needs defined behavior for partial completion or failure. Before adopting one, confirm that the workflow really crosses ownership/transaction boundaries; list each step, timeout, retry, duplicate-handling rule, compensation, terminal state, and manual-recovery path. Make steps and compensations idempotent where retries are possible.
+
+Do **not** add a Saga for several writes that can safely live in one database transaction. It adds states, retries, compensation logic, monitoring, and recovery work. If the business cannot compensate an action (for example, a shipment already delivered), define an alternative such as a refund, replacement, or human review; compensation does not always restore the exact original world.
+
+An **orchestrated Saga** uses a coordinator to decide and record the next step, which makes workflow state and progress visible in one place. A **choreographed Saga** has services react to events and emit further events, which avoids a central coordinator but can make the full workflow harder to trace. Choose based on the number of steps, need for central visibility, and team ability to observe and operate the flow.
 
 ## Idempotency
 
