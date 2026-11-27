@@ -4,6 +4,7 @@ Reference notes for ideas used by the [Delivery Framework](../delivery-framework
 
 - [Architecture patterns](architecture-patterns.md)
 - [Application patterns](application-patterns.md)
+- [Design patterns](design-patterns.md) — creational, structural, and behavioral patterns with business examples.
 - [Distributed systems](distributed-systems.md)
 - [Design principles and anti-patterns](design-principles-and-anti-patterns.md)
 - [Data and storage](data-and-storage.md)
