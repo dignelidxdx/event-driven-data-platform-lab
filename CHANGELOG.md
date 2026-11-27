@@ -10,6 +10,7 @@ Notable project changes are recorded here in reverse chronological order. Entrie
 - Original editable SVG diagram connecting architecture decisions, fitness functions, and continuous verification.
 - Guidance distinguishing design principles from system-specific decisions and handling justified exceptions.
 - RFC template and engineering workflow guidance for framing work, checking prerequisites early, and keeping status in the existing tracker.
+- Guidance connecting high-level architecture decisions to iterative implementation feedback, with optional dependency-check tool examples.
 - Optional architectural fitness function verification section in the ADR template.
 - GitHub pull request template at `.github/pull_request_template.md`.
 - Engineering workflow documentation covering team ownership, repository strategy, Git workflows, GitHub/GitLab, and pull request review, including AI-assisted changes.
