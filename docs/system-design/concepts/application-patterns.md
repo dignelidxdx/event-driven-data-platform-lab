@@ -26,4 +26,10 @@ Encapsulates interchangeable algorithms behind a common interface. Use it when b
 
 **Consider Strategy when** a business rule has multiple real variants selected by context, configuration, market, or policy (such as shipping-price calculation by region). Make the selection rule explicit and test each variant; if there is only one stable algorithm, a direct function is easier to maintain.
 
+## Registry
+
+A Registry maps a stable key to a registered implementation or provider, such as a shipping strategy by region. It can make selection explicit and keep construction out of callers; it is a lookup mechanism, not a replacement for defining the behavior behind an interface. A small immutable map injected at startup is often enough. Avoid mutable global registries, hidden runtime registration, and stringly typed keys when they make dependencies, lifecycle, or missing registrations hard to detect.
+
+**Consider a Registry when** a bounded set of implementations must be selected by a key and the mapping is clearer in one place than in scattered conditionals. Pair it with Strategy when algorithms vary; use a direct conditional or dependency injection when the set is small and stable. Validate required registrations at startup and define the behavior for an unknown key.
+
 Patterns should clarify responsibilities and make likely changes safer. If indirection obscures the control flow, revisit whether the pattern fits.

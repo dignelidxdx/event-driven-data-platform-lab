@@ -8,6 +8,12 @@ Producers publish facts or requests that consumers process asynchronously. This 
 
 **Consider event-driven architecture when** producers and consumers need independent lifecycles, one business fact has multiple downstream uses, or work can complete asynchronously. Define delivery guarantees, event ownership and schema evolution, ordering needs, duplicate handling, replay policy, and acceptable propagation delay. A direct synchronous call is usually simpler when one caller needs an immediate result from one owner.
 
+### Fire-and-forget
+
+Fire-and-forget means a caller starts work and does not wait for its completion or outcome. It is suitable only when the caller does not need the result to decide its response and the work may safely finish later (for example, best-effort telemetry). Returning after an in-memory task is started does not make the work durable: process failure can lose it, and errors may go unobserved.
+
+For business effects such as sending an order confirmation, use a durable queue or an outbox-backed event when loss is unacceptable. Define acknowledgement, retry, idempotency, dead-letter or reconciliation behavior, and monitoring. If the caller needs to know whether the operation succeeded, expose an explicit result or accepted/pending state instead of fire-and-forget.
+
 ## CQRS
 
 Separates command handling that changes state from query models optimized for reads. CQRS can help when read and write needs differ materially; separate models and synchronization are unnecessary complexity for many applications.
@@ -57,6 +63,14 @@ An operation is idempotent when repeating the same request or message produces t
 **Message-consumer example:** a consumer records a message or business-operation identifier in an inbox/deduplication store in the same transaction as its state change. Redelivery then does not apply that change twice. For external side effects, use the external provider's idempotency mechanism or a recoverable workflow; local deduplication cannot make a remote call atomic.
 
 Idempotency is not the same as “the code ran once,” and it does not mean every repeated request must return the same HTTP status or response bytes. Define which business effect must happen at most once for a key and what a duplicate caller should observe. HTTP methods such as PUT are specified as idempotent in their intended effect, but POST operations and message handlers need application-level design when retries must be safe. See [API and protocols](../delivery-framework/03-api-protocols-and-endpoints.md), [data flow](../delivery-framework/04-data-flow.md), and [deep dives](../delivery-framework/06-deep-dives.md) for applying and testing it.
+
+## Optimistic concurrency and compare-and-swap
+
+Optimistic concurrency control lets concurrent work proceed without holding a lock for the whole read-edit-write interval. Store a version or other concurrency token with the record; on update, atomically write the new state only if the stored token still equals the one that was read. This conditional update is compare-and-swap (CAS). If another writer changed the record first, the update affects no row (or returns a conflict), and the caller must reload and retry, merge, or report the conflict according to business rules.
+
+For example, read an order with version 7, compute a change, then update it with a condition equivalent to `WHERE id = ? AND version = 7`, incrementing the version in the same atomic database operation. A snapshot is the data read at a point in time; it is not itself concurrency control. CAS over a version can prevent a stale snapshot from overwriting newer state. Database-specific mechanisms such as a conditional update, ETag/`If-Match`, or a compare-and-set primitive can provide the condition; the comparison and write must be atomic.
+
+**Consider optimistic concurrency when** conflicts are possible but relatively uncommon, operations are short, and stale writes must be detected without serializing every reader and writer. It is common in database-backed applications and APIs that use version columns or entity tags. It does not prevent conflicts; choose a bounded retry policy and decide whether to merge or return a conflict. For frequent contention, multi-record invariants, or operations that cannot be safely retried, use an appropriate transaction, locking, or domain-specific coordination strategy. A version check is only effective if every relevant writer follows it.
 
 ## Consistency and CAP
 
