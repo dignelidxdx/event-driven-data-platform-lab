@@ -1,23 +1,38 @@
 ## Description
 
-Summarize what this pull request changes.
+<!-- Summarize what this pull request changes. -->
 
 ## Motivation
 
-Why is this change needed? Link the issue, requirement, or design decision.
+<!-- Explain why this change is needed. Link the issue, requirement, or design decision. -->
+
+## Change type
+
+<!-- Select all applicable change types. -->
+
+- [ ] Feature
+- [ ] Bug fix
+- [ ] Hotfix / urgent production fix
+- [ ] Documentation
+- [ ] Refactor (no intended behavior change)
+- [ ] Maintenance / dependency or tooling update
+- [ ] Security fix or hardening
+- [ ] Performance or reliability improvement
+- [ ] Breaking change
+- [ ] Other: <!-- Specify -->
 
 ## Scope
 
-- In scope:
-- Out of scope:
+- In scope: <!-- What does this change include? -->
+- Out of scope: <!-- What is intentionally excluded? -->
 
 ## Changes
 
--
+- <!-- List the key changes. -->
 
 ## Screenshots or recordings
 
-For user-visible changes, include before/after screenshots or a short recording when useful. Remove this section if it does not apply.
+<!-- For user-visible changes, add before/after screenshots or a short recording. Remove this section if it does not apply. -->
 
 | Before | After |
 |---|---|
@@ -25,25 +40,25 @@ For user-visible changes, include before/after screenshots or a short recording 
 
 ## Design notes
 
-Describe important decisions, alternatives, data/API changes, and links to diagrams, RFCs, or ADRs.
+<!-- Describe important decisions, alternatives, data/API changes, and link diagrams, RFCs, or ADRs. -->
 
 ## Verification
 
-- Checks/tests run and relevant results:
-- Manual verification, if applicable:
-- Checks not run and reason, if applicable:
+- Checks/tests run and relevant results: <!-- Include commands and outcomes. -->
+- Manual verification, if applicable: <!-- Describe what was checked. -->
+- Checks not run and reason, if applicable: <!-- Include follow-up if needed. -->
 
 ## Risk and rollout
 
-- User, security, or operational risks:
-- Migration, feature flag, rollout, and rollback:
-- Documentation, metrics, or runbook changes:
+- User, security, or operational risks: <!-- Include N/A when not applicable. -->
+- Migration, feature flag, rollout, and rollback: <!-- Include N/A when not applicable. -->
+- Documentation, metrics, or runbook changes: <!-- Include N/A when not applicable. -->
 
 ## Reviewer guidance
 
-- Please focus on:
-- Specialist reviewers needed:
-- Related or follow-up pull requests:
+- Please focus on: <!-- Point reviewers to the most important areas. -->
+- Specialist reviewers needed: <!-- Name expertise or teams, if applicable. -->
+- Related or follow-up pull requests: <!-- Link related work, if any. -->
 
 ## Author checklist
 
