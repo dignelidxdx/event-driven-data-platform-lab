@@ -43,7 +43,7 @@ Do not move directly from a vague idea to implementation. An approved specificat
 ```text
 docs/
   examples/                    Worked examples, including end-to-end walkthroughs
-  specifications/               Project specifications grouped by business domain
+  models/                       Separate business/learning models with functional and technical specs
   system-design/               Learning guide, processes, concepts, technology, artifacts, and case studies
 ```
 
@@ -73,6 +73,9 @@ Before considering a feature complete:
 
 - Keep documentation in English and use the existing names and structure under `docs/system-design/`.
 - Keep worked walkthroughs under `docs/examples/` and distinguish implemented behavior from proposed extensions or deployment designs.
+- Organize independent business or learning models under `docs/models/<model>/specs/functional.md` and `technical.md`; do not imply that separate models are integrated unless a specification explicitly defines that relationship. Keep functional intent separate from technical choices and link both from the model README.
+- Functional specs state purpose/motivation, stakeholders, goals/non-goals, scope/boundaries, actors, use cases, business rules, acceptance criteria, assumptions, and open questions. Technical specs state domain/core entities, workload and quality attributes, contracts/data flow, architecture alternatives, technology rationale, security, observability, failure/recovery, validation, and unresolved decisions.
+- Separate measured workload, stakeholder targets, estimates, and unknowns. Do not invent DAU, request rates, SLOs, or capacity numbers; choose measures appropriate to the feature's users and domain.
 - Explain when and why a pattern or artifact is useful, its trade-offs, and how it connects to a Delivery Framework or System Design Process stage.
 - Use measurable examples only when their assumptions and source are clear. Mark unknown targets as questions or assumptions rather than inventing commitments.
 - Place reusable forms in `docs/system-design/artifacts-and-templates/`; place worked, explicitly illustrative scenarios in `docs/system-design/case-studies/`.

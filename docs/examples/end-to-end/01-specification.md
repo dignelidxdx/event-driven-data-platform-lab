@@ -1,6 +1,6 @@
 # Specification and Scope
 
-Begin with the [approved design specification](../../specifications/data-platform/event-driven-data-platform-design.md). This worked example makes its assumptions visible and traces them to design and validation; it does not silently turn learning assumptions into production commitments.
+Begin with the event-driven data platform model's [functional specification](../../models/event-driven-data-platform/specs/functional.md) and [technical specification](../../models/event-driven-data-platform/specs/technical.md). This worked example makes assumptions visible and traces them to design and validation; it does not silently turn learning assumptions into production commitments.
 
 ## Problem and users
 

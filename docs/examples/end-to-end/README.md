@@ -1,6 +1,6 @@
 # End-to-End Event-Driven Data Platform
 
-This worked example follows one synthetic scientific data batch from stakeholder need to specification, the six Delivery Framework stages, code, deployment, and operations. It uses the existing [event-driven data platform design](../../specifications/data-platform/event-driven-data-platform-design.md) as its starting specification.
+This worked example follows one synthetic scientific data batch from stakeholder need to specification, the six Delivery Framework stages, code, deployment, and operations. It uses the event-driven data platform model's [functional specification](../../models/event-driven-data-platform/specs/functional.md) and [technical specification](../../models/event-driven-data-platform/specs/technical.md) as its starting point. The example does not connect this model to e-commerce or clinical orders.
 
 The specification describes a local educational lab and explicitly leaves real AWS deployment, production availability, and real analytical services out of scope. Therefore this guide separates the executable local learning path from a later AWS deployment design. AWS service names are candidates to evaluate, not a selected production architecture.
 

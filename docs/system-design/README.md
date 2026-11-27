@@ -10,7 +10,7 @@ The System Design Process guides the broader design activity: framing the proble
 
 Concept references explain the methods and technical ideas used in these stages. Technology references support language and framework choices. Artifacts and templates provide optional ways to record and communicate the work. Case studies apply the guides to example systems.
 
-Project-specific design specifications are organized by business domain under [`docs/specifications/`](../specifications/README.md).
+The repository's separate business and learning models are documented under [`docs/models/`](../models/README.md), each with functional and technical specifications.
 
 For a worked project journey from specification through implementation and an illustrative cloud deployment path, see the [end-to-end event-driven data platform example](../examples/end-to-end/README.md).
 
